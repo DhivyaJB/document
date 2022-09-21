@@ -1,0 +1,345 @@
+ARRAY LIST
+
+JAVA Program to retrieve an element from a given array list?
+
+package ArrayList;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Example1 {
+
+	public static void main(String[] args) {
+						List<String>list_Strings = new ArrayList<String>();
+				//String red = "Radha";
+				//String blue = "Krishna";
+				//String Black = "Radha_Krishna";
+				
+				
+				list_Strings.add("Radha");
+				list_Strings.add("Krishna");
+				list_Strings.add("Radha_Krishna");
+				System.out.println(list_Strings);
+				
+				String element = list_Strings.get(0);
+				System.out.println("First element"+ element);
+				String element1 = list_Strings.get(2);
+				System.out.println("Third element"+element1);
+				
+				
+				}
+
+}
+
+
+OUTPUT::
+[Radha, Krishna, Radha_Krishna]
+First elementRadha
+Third elementRadha_Krishna
+
+
+
+
+JAVA program to update Specific array elements by given element?
+
+
+package ArrayList;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Example2 {
+
+	public static void main(String[] args) {
+		List<String>list_Strings =new ArrayList<String>();
+		list_Strings.add("Radha");
+		list_Strings.add("Krishna");
+		list_Strings.add("Pawan");
+		list_Strings.add("Kalyan");
+		
+		System.out.println(list_Strings);
+		
+		list_Strings.set(2, "Kalyan");
+		System.out.println(list_Strings);
+		list_Strings.set(1, "Pawan");
+		System.out.println(list_Strings);
+		list_Strings.add(3, "PAWAN");
+		System.out.println(list_Strings);
+		list_Strings.clear();
+		System.out.println(list_Strings);
+		
+
+	}
+
+}
+
+
+OUTPUT::::
+[Radha, Krishna, Pawan, Kalyan]
+[Radha, Krishna, Kalyan, Kalyan]
+[Radha, Pawan, Kalyan, Kalyan]
+[Radha, Pawan, Kalyan, PAWAN, Kalyan]
+[]
+
+
+
+JAVA program to remove an specific element from an array list?
+
+package ArrayList;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Example3 {
+
+	public static void main(String[] args) {
+		
+		
+				List<String>list_Strings =new ArrayList<String>();
+				list_Strings.add("Radha");
+				list_Strings.add("Krishna");
+				list_Strings.add("Pawan");
+				list_Strings.add("Kalyan");
+				
+				System.out.println(list_Strings);
+				
+				list_Strings.remove(2);
+				System.out.println(list_Strings);
+				//list_Strings.remove(1);
+				//System.out.println(list_Strings);
+				list_Strings.remove("Krishna");
+				System.out.println(list_Strings);
+				list_Strings.clear();
+				System.out.println(list_Strings);
+				
+
+	}
+
+}
+
+
+OUTPUT::
+[Radha, Krishna, Pawan, Kalyan]
+[Radha, Krishna, Kalyan]
+[Radha, Kalyan]
+[]
+
+
+Hash Map
+
+
+
+4. Write a Java program to remove all of the mappings from a map?
+
+
+package HashMap;
+
+import java.util.HashMap;
+
+public class Example1 {
+
+	public static void main(String[] args) {
+		HashMap<Integer , String>hash_map = new HashMap <Integer , String>();
+		hash_map.put(1, "Fast");
+		hash_map.put(2, "Faster");
+		hash_map.put(3, "Fastest");
+		
+		System.out.println("Original Linked Maps " +hash_map);
+		hash_map.clear();
+		System.out.println(hash_map);
+		
+
+	}
+
+}
+
+OUTPUT::
+
+Original Linked Maps {1=Fast, 2=Faster, 3=Fastest}
+{}
+
+
+
+
+5. Write a Java program to check whether a map contains key-value mappings (empty) or not?
+
+package HashMap;
+
+import java.util.HashMap;
+
+public class Example2 {
+
+	public static void main(String[] args) {
+		HashMap<Integer , String>hash_map = new HashMap <Integer , String>();
+		hash_map.put(1, "Fast");
+		hash_map.put(2, "Faster");
+		hash_map.put(3, "Fastest");
+		
+		boolean result = hash_map.isEmpty();
+		
+		System.out.println("Is hash map is empty : " + result);
+		
+		hash_map.clear();
+		result = hash_map.isEmpty();
+		System.out.println("Is hash map is empty : " + result);
+	}
+
+}
+
+
+OUTPUT::
+
+Is hash map is empty : false
+Is hash map is empty : true
+
+
+
+6. Write a Java program to get a shallow copy of a HashMap instance?
+
+package HashMap;
+
+import java.util.HashMap;
+
+public class Example3 {
+
+	public static void main(String[] args) {
+		HashMap<Integer , String>hash_map = new HashMap <Integer , String>();
+		hash_map.put(1, "Fast");
+		hash_map.put(2, "Faster");
+		hash_map.put(3, "Fastest");
+		
+		System.out.println("The Original map : "+ hash_map);
+		
+		HashMap<Integer , String> new_hash_map = new HashMap<Integer , String>();
+		new_hash_map = (HashMap)hash_map.clone();
+		System.out.println("Cloned Map : " + new_hash_map);
+
+	}
+
+}
+
+OUTPUT::
+The Original map : {1=Fast, 2=Faster, 3=Fastest}
+Cloned Map : {1=Fast, 2=Faster, 3=Fastest}
+
+
+
+
+
+
+
+HASH SET
+
+7.Write a Java program to empty an hash set?
+
+
+package Hashset;
+
+import java.util.HashSet;
+
+public class Example2 {
+
+	public static void main(String[] args) {
+		
+				
+		HashSet<String>h_Set = new HashSet();
+		h_Set.add("Radha");
+		h_Set.add("Krishna");
+		h_Set.add("Pawan");
+		h_Set.add("Kalyan");
+						
+		System.out.println(h_Set);
+		System.out.println("Original HashSet : "+ h_Set);
+		h_Set.removeAll(h_Set);
+		System.out.println("Hash Set after removing all the elements "+h_Set);
+		//h_Set.remove("Kalyan");
+		//System.out.println(h_Set);
+
+
+
+	}
+
+}
+
+
+OUTPUT::
+[Krishna, Kalyan, Pawan, Radha]
+Original HashSet : [Krishna, Kalyan, Pawan, Radha]
+Hash Set after removing all the elements []
+
+
+
+8.Write a Java program to test a hash set is empty or not?
+
+package Hashset;
+
+import java.util.HashSet;
+
+public class Example1 {
+
+	public static void main(String[] args) {	
+		
+			HashSet<String>h_Set = new HashSet();
+			h_Set.add("Radha");
+			h_Set.add("Krishna");
+			h_Set.add("Pawan");
+			h_Set.add("Kalyan");
+				
+			System.out.println(h_Set);
+			System.out.println("Original HashSet : "+ h_Set);
+			System.out.println("Checking the above array list is empty or not!" +h_Set.isEmpty());
+			System.out.println("Remove all the elements from a Hash Set: ");
+			//h_Set.removeAll(h_Set);
+			//System.out.println("Hash Set after removing all the elements "+h_Set);
+			h_Set.remove("Kalyan");
+			System.out.println(h_Set);
+
+
+	}
+
+}
+
+OUTPUT:::
+
+[Krishna, Kalyan, Pawan, Radha]
+Original HashSet : [Krishna, Kalyan, Pawan, Radha]
+Checking the above array list is empty or not!false
+Remove all the elements from a Hash Set: 
+[Krishna, Pawan, Radha]
+
+
+
+
+
+9. Write a Java program to clone a hash set to another hash set?
+
+
+package Hashset;
+
+import java.util.HashSet;
+
+public class Example3 {
+
+	public static void main(String[] args) {
+		HashSet<String>h_Set = new HashSet();
+		h_Set.add("Radha");
+		h_Set.add("Krishna");
+		h_Set.add("Pawan");
+		h_Set.add("Kalyan");
+						
+		System.out.println(h_Set);
+		System.out.println("Original HashSet : "+ h_Set);
+		HashSet<String>new_h_Set = new HashSet<String>();
+		new_h_Set = (HashSet)h_Set.clone();
+		System.out.println("Cloned Hash Set : " + new_h_Set);
+
+	}
+
+}
+
+
+OUTPUT::
+[Krishna, Kalyan, Pawan, Radha]
+Original HashSet : [Krishna, Kalyan, Pawan, Radha]
+Cloned Hash Set : [Krishna, Kalyan, Pawan, Radha]
+

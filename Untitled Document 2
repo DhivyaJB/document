@@ -1,0 +1,161 @@
+LIST 
+
+package Fridayassessment;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListInterfaceExample {
+
+	public static void main(String[] args) {
+		List list_1 = new ArrayList();
+		List<String> list_2 =new ArrayList<String>();
+		
+		list_1.add(0, 10);
+		list_1.add(1, 20);
+		list_2.add(0, "Btech");
+		list_2.add(1, "Smart");
+		list_2.add(2,"Class");
+		
+		list_1.addAll(1, list_2);
+		System.out.println("\nElements of list_1 : " + list_1);
+		
+		System.out.println("\nElement at index 3 : " + list_1.get(3));
+		
+		System.out.println("\nSublist : " + list_1.subList(2, 5));
+		
+		list_1.set(2, 10);
+		System.out.println("\nAfter updating the value at index 2 : " + list_1);
+		System.out.println("\nIndex of value 10 : " + list_1.indexOf(10));
+		System.out.println("\nLast index of value 10: " + list_1.lastIndexOf(10));
+		
+
+	}
+
+}
+
+
+OUTPUT::
+
+
+Elements of list_1 : [10, Btech, Smart, Class, 20]
+
+Element at index 3 : Class
+
+Sublist : [Smart, Class, 20]
+
+After updating the value at index 2 : [10, Btech, 10, Class, 20]
+
+Index of value 10 : 0
+
+Last index of value 10: 2
+
+
+
+2.SET example
+
+
+
+package Fridayassessment;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class SetExample {
+
+	public static void main(String[] args) 
+	{
+	Set<Integer> values = new HashSet<>();
+	
+	values.add(5);
+	values.add(6);
+	values.add(9);
+	values.add(7);
+	
+	for(int i : values)
+	{
+		System.out.println(i);
+	}
+
+	}
+
+}
+
+
+OUTPUT:::
+
+	5
+	6
+	7
+	9
+
+
+
+3.MAP example
+
+
+package Fridayassessment;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class MapDemo {
+
+	public static void main(String[] args) 
+	{
+		Map<String,String> map = new HashMap<>();
+		map.put("MyName", "Kishor");
+		map.put("Actor", "Krishna");
+		map.put("Director", "RadhaKrishna");
+		
+		System.out.println(map);
+
+	}
+
+}
+
+
+
+OUTPUT:::
+
+{MyName=Kishor, Actor=Krishna, Director=RadhaKrishna}
+
+
+
+
+4.TRY, CATCH Exceptional Handling
+
+
+package Exceptionhandling;
+import java.util.Scanner;
+
+public class TryCatchExample {
+            
+    public static void main(String[] args) {
+                    
+        Scanner read = new Scanner(System.in);
+        System.out.println("Enter the a and b values: ");
+        try {
+            int a = read.nextInt();
+            int b = read.nextInt();
+            int c = a / b;
+            System.out.println(a + "/" + b +" = " + c);
+        }
+        catch(ArithmeticException ae) {
+            System.out.println("Problem info: Value of divisor can not be ZERO");
+        }  
+    }
+}
+
+
+
+OUTPUT:::
+
+Enter the a and b values:
+10
+0
+Problem info: Value of divisor can not be ZERO
+
+
+
+

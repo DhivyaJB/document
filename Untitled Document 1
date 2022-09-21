@@ -1,0 +1,307 @@
+1. JAVA program to count a number of UNICODE points in the SPecified text range of String
+
+::
+
+package Assessments;
+
+public class UnicodePoint {
+
+	public static void main(String[] args) 
+	{
+		String str = "Dhivya";
+		System.out.println("original String :"+str );
+		
+		int val1 = str.codePointBefore(1);
+		
+		int val2 = str.codePointBefore(7);
+		
+		System.out.println("Character(unicode point) = " + val1 );
+		
+		System.out.println("Character(unicode point) = " + val2);
+		
+
+	}
+
+}
+
+
+OUTPUT::
+original String :Dhivya
+Character(unicode point) = 75
+Character(unicode point) = 101
+
+
+
+
+2.JAVA program to print current date and time
+
+::
+
+package Assessments;
+
+import java.util.Calendar;
+
+public class TimeAndDate {
+
+	public static void main(String[] args) 
+	{
+		Calendar c = Calendar.getInstance();
+		System.out.println("Current Date and Time : ");
+		System.out.format("%tB  %te , %tY%n", c, c, c);
+		System.out.format("%tl:%tM %tp%n", c, c , c);
+		
+		
+	}
+
+}
+
+
+OUTPUT::
+Current Date and Time : 
+September  16 , 2022
+2:40 pm
+
+
+
+
+
+3.JAVA program to add two matrices
+
+::
+
+package Assessments;
+
+import java.util.Scanner;
+
+public class TwoMatrices {
+
+	public static void main(String[] args) 
+	{
+		int a,b,c,d;
+		Scanner in = new Scanner(System.in);
+		System.out.println("Number of rows of Matrix");
+		a = in.nextInt();
+		System.out.println("Number of coloumns of Matrix");
+		b = in.nextInt();
+		
+		int array1[][] = new int[a][b];
+		int array2[][] = new int[a][b];
+		int sum[][] = new int[a][b];
+		
+		System.out.println("Elements of First Matrix");
+		
+		for  ( c = 0; c<a; c++ )
+			for (d = 0; d<b ; d++)
+				array1[c][d] = in.nextInt();
+		
+		
+		System.out.println("Elements of second Matrix ");
+		
+		for (c =0; c<a; c++)
+			for (d=0; d<b; d++)
+				array2[c][d]=in.nextInt();
+		
+		for (c=0; c<a; c++)
+			for(d=0; d<b; d++)
+				sum[c][d]=array1[c][d]+array2[c][d];
+		System.out.println("Sum of the Matrices:-  ");
+		
+		for ( c=0; c<a ; c++)
+		{
+			for(d=0; d<b; d++)
+				System.out.println(sum[c][d]+"\t");
+			System.out.println();
+		}
+
+	}
+
+}
+
+
+OUTPUT::
+
+Number of rows of Matrix
+	2
+Number of coloumns of Matrix
+	2
+Elements of First Matrix
+	8
+	9
+	3
+	1
+Elements of second Matrix 
+	7
+	8
+	6
+	8
+Sum of the Matrices:-  
+	15	
+	17	
+
+	9	
+	9	
+
+
+
+
+
+4.JAVA program to find MAX & MIN value of an Array
+
+:::
+package Assessments;
+
+import java.util.Arrays;
+
+public class MaxAndMinOfArray 
+{
+	static int max;
+	static int min;
+	
+	public static void max_min(int my_array[])
+	{
+		max = my_array[0];
+		min = my_array[0];
+		int len = my_array.length;
+		for(int i=1;i<len-1; i=i+2) 
+		{
+			if(i+1>len) 
+			{
+				if(my_array[i] > max)max = my_array[i];
+				if(my_array[i] > min)min = my_array[i];
+				
+			}
+			if(my_array[i] > my_array[i + 1])
+            {
+	          if(my_array[i] > max)max = my_array[i];
+	          if(my_array[i + 1] < min)min = my_array[i + 1];
+	          
+            }
+			if (my_array[i] < my_array[i + 1])
+			{
+				if(my_array[i] < min)min = my_array[i];
+				if(my_array[i + 1] < max)max = my_array[i + 1];
+					
+				
+				
+			}
+		}
+	}
+	
+
+public static void main(String[] args) 
+	{
+	int[] my_array = {11,15,13,24,15,18,16,22,19,20};
+	max_min(my_array);
+	System.out.println("Original Array: "+Arrays.toString(my_array));
+	System.out.println("Maximum value for the above array = "+ max);
+	System.out.println("Minimum value for the above array = "+ min);
+	}
+	
+}
+
+
+OUTPUT::
+Original Array: [11, 15, 13, 24, 15, 18, 16, 22, 19, 20]
+Maximum value for the above array = 24
+Minimum value for the above array = 11
+
+
+
+
+5.JAVA program to shuffle a given Array of integers
+
+::
+
+package Assessments;
+
+import java.util.Arrays;
+import java.util.Random;
+
+public class ShuffleArrayInt 
+{
+	public static void shuffle(int nums[])
+	{
+		for(int i = nums.length -1; i>=1; i--)
+		{
+			Random rand = new Random();
+			int j = rand.nextInt(i+1);
+			swap_elements(nums, i, j);
+		}
+	}
+
+	private static void swap_elements(int[] nums, int i, int j) 
+	{
+		int temp = nums[i];
+		nums[i] = nums[j];
+		nums[j] = temp;
+		
+	}
+
+	public static void main(String[] args) 
+	{
+		int[] nums = {5,6,7,8,9,10};
+		System.out.println("Original array : " +Arrays.toString(nums));
+		shuffle(nums);
+		System.out.println("shuffle Array : " +Arrays.toString(nums));
+		
+		
+
+	}
+
+}
+
+OUTPUT::
+Original array : [5, 6, 7, 8, 9, 10]
+shuffle Array : [8, 5, 9, 6, 7, 10]
+
+
+
+
+6..MULTIPLE INHERITANCE
+
+package MultipleInheritance;
+
+class Pet
+{
+	void display1() 
+	{
+		System.out.println("Eating...");
+	}
+}
+class Cat extends Pet
+{
+	void display2() 
+	{
+		System.out.println("Meowww...");
+	}	
+}
+class BabyCat extends Cat
+{
+	void display3() 
+	{
+		System.out.println("Cryingg...");
+	}
+}
+public class Animal{
+	public static void main(String[] args) 
+	{
+		BabyCat BC=new BabyCat();
+		BC.display1();
+		BC.display2();
+		BC.display3();
+	}
+		
+}
+
+
+OUTPUT::
+
+Eating...
+Meowww...
+Cryingg...
+
+
+
+
+
+
